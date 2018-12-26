@@ -8,14 +8,17 @@ public class HP : MonoBehaviour {
 
     public float TotalHp = 100;
     public  float CurrentHp;
-  
+    public float a;
+    public float moreArmor=0;
     public static HP hP;
    
+    public Text pointText;
+
 
     void Start()
     {
         CurrentHp = TotalHp;
-
+        TakeArmor(a);
     }
 
     
@@ -28,14 +31,8 @@ public class HP : MonoBehaviour {
 
             HealthBar();
             
-
-
         }
 
-
-        
-
-        
     }
 
      void Awake()
@@ -53,33 +50,43 @@ public class HP : MonoBehaviour {
             HealthBar();
         }
         
-
-       
     }
-
-    
-    
-   
-
 
 
     public  void TakeDamage(float damage)
     {
-
-        if (CurrentHp!=0&&damage<=CurrentHp)
-        {
-            CurrentHp -= damage;
-            HealthBar();
-        }
-           
+       
         
+            if (CurrentHp != 0 && damage <= CurrentHp)
+            {
+                CurrentHp -= damage;
+                HealthBar();
+            }
         
-
                   
     }
 
+
+   public void TakeArmor(float armor)
+    {
+        moreArmor += armor;
+        pointText.text = moreArmor.ToString();
+    }
+
+    
     public void HealthBar()
     {
         transform.localScale = new Vector3((CurrentHp / TotalHp), 1, 1);
     }
 }
+
+
+
+
+//GiveDamage:
+ //if (moreArmor!=0)
+ //       {
+
+ //           moreArmor -= damage;
+
+ //       }

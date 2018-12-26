@@ -42,6 +42,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         take = false;
         HP.hP.TakeDamage(card.damage);
         HP.hP.TakeHeal(card.heal);
+        HP.hP.TakeArmor(card.armor);
     }
    
 }
