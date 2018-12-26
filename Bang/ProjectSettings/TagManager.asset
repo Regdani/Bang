@@ -7,6 +7,7 @@ TagManager:
   - Discard
   - bang
   - knife
+  - test
   layers:
   - Default
   - TransparentFX

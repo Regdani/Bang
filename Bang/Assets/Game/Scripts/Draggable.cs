@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
+public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+{
 
     public Transform parentToReturnTo = null;
-    public static bool take=true;
-   public void OnBeginDrag(PointerEventData eventData) {
+    public static bool take = true;
+    public CardsValue card;
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
         Debug.Log("OnBeginDrag");
 
         parentToReturnTo = this.transform.parent;
@@ -26,12 +30,18 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public void OnEndDrag(PointerEventData eventData)
     {
         Debug.Log("OnEndDrag");
-      
+
         GetComponent<CanvasGroup>().blocksRaycasts = true;
         this.transform.SetParent(parentToReturnTo);
-        take = false;
+        dha();
 
-        
     }
 
+    public void dha()
+    {
+        take = false;
+        HP.hP.TakeDamage(card.damage);
+        HP.hP.TakeHeal(card.heal);
+    }
+   
 }
