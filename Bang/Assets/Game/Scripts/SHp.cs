@@ -1,56 +1,54 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HP : MonoBehaviour {
-
+public class SHp : MonoBehaviour {
     public float TotalHp = 100;
-    public  float CurrentHp;
-    public static HP hP;
+    public float CurrentHp;
+    public static SHp sHp;
     public TextMeshProUGUI hp;
     public Text arm;
-    public float a;
-    public float moreArmor;
+    private float a;
+    private float moreArmor = 0;
 
 
     void Start()
     {
         CurrentHp = TotalHp;
-        
+
         hp.text = CurrentHp.ToString();
-        
+
     }
 
-    
 
-    void Update ()
+
+    void Update()
     {
-        if ( Draggable.take==false)
+        if (Draggable.take == false)
         {
             Draggable.take = true;
-            
+
             HealthBar();
             hp.text = CurrentHp.ToString();
-            
+
             Armor(a);
         }
 
     }
 
-     void Awake()
+    void Awake()
     {
-        hP = this;
+        sHp = this;
     }
 
 
     public void TakeHeal(float heal)
     {
-        if (CurrentHp!=100)
+        if (CurrentHp != 100)
         {
-            if (heal+CurrentHp>100)
+            if (heal + CurrentHp > 100)
             {
                 heal = 100 - CurrentHp;
             }
@@ -59,11 +57,11 @@ public class HP : MonoBehaviour {
             HealthBar();
 
         }
-        
+
     }
 
 
-    public  void GiveDamage(float damage)
+    public void GiveDamage(float damage)
     {
 
 
@@ -107,16 +105,11 @@ public class HP : MonoBehaviour {
         arm.text = moreArmor.ToString();
     }
 
-    
+
     public void HealthBar()
     {
         hp.text = CurrentHp.ToString();
         transform.localScale = new Vector3((CurrentHp / TotalHp), 1, 1);
-        
+
     }
 }
-
-
-
-
-
