@@ -26,15 +26,15 @@ public class SHp : MonoBehaviour {
 
     void Update()
     {
-        if (Draggable.take == false)
-        {
-            Draggable.take = true;
+        //if (Draggable.take == false)
+        //{
+        //    Draggable.take = true;
 
             HealthBar();
             hp.text = CurrentHp.ToString();
 
             Armor(a);
-        }
+        //}
 
     }
 

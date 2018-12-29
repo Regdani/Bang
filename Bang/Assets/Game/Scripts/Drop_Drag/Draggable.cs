@@ -7,8 +7,12 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 {
 
     public Transform parentToReturnTo = null;
-    public static bool take = true;
     public CardsValue card;
+      
+
+
+
+   
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -33,16 +37,17 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         GetComponent<CanvasGroup>().blocksRaycasts = true;
         this.transform.SetParent(parentToReturnTo);
-        dha();
 
+        
     }
 
     public void dha()
     {
-        take = false;
+        
+        SHp.sHp.Armor(card.armor);
         HP.hP.GiveDamage(card.damage);
         SHp.sHp.TakeHeal(card.heal);
-        SHp.sHp.Armor(card.armor);
+        
     }
    
 }
