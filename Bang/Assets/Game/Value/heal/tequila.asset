@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4866f3a9e46c9948a40859d41b337bb, type: 3}
-  m_Name: New Card
+  m_Name: tequila
   m_EditorClassIdentifier: 
   damage: 0
   heal: 7

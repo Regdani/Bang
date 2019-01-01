@@ -10,8 +10,8 @@ public class SHp : MonoBehaviour {
     public static SHp sHp;
     public TextMeshProUGUI hp;
     public Text arm;
-    private float a;
-    private float moreArmor = 0;
+    private float a=0;
+    private float moreArmor;
 
 
     void Start()
@@ -26,16 +26,10 @@ public class SHp : MonoBehaviour {
 
     void Update()
     {
-        //if (Draggable.take == false)
-        //{
-        //    Draggable.take = true;
-
             HealthBar();
             hp.text = CurrentHp.ToString();
 
             Armor(a);
-        //}
-
     }
 
     void Awake()

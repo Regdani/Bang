@@ -8,5 +8,6 @@ public class CardsValue : ScriptableObject {
     public  float damage;
     public  float heal;
     public float armor;
+    
 
 }

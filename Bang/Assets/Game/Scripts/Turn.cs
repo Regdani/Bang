@@ -1,0 +1,91 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Turn : MonoBehaviour {
+
+    public bool turnPlayer = true;
+    public float armor;
+    public float damage;
+    public float heal;
+    public bool huzhat;
+    public  int lapok=0;
+    public int kijatszottLapok;
+    public GameObject hand;
+    
+    System.Random rnd = new System.Random();
+
+    public static Turn turn;
+
+
+    void Start()
+    {
+        while (lapok != 4)
+        {
+            Draw.draw.huzas();
+            lapok++;
+        }
+        huzhat = false;
+
+        
+    }
+
+    void Update()
+    {
+        
+        if (turnPlayer)
+        {
+            
+            if (kijatszottLapok != 3)
+            {
+
+                if (huzhat == true)
+                {
+
+                    while (lapok != 4)
+                    {
+                        Draw.draw.huzas();
+                        lapok++;
+                    }
+
+                    huzhat = false;
+                }
+                
+                
+            }
+            else
+            {
+                hand.SetActive(false);
+            }
+           
+        }
+        else
+        {
+            hand.SetActive(true);
+            kijatszottLapok = 0;
+            Enemy();
+            huzhat = true;
+        }
+        
+    }
+
+
+     void Awake()
+    {
+        turn = this;
+    }
+
+
+    public void TurnChange()
+    {
+        turnPlayer = !turnPlayer;
+    }
+
+    public void Enemy()
+    {
+        HP.hP.Armor(armor = rnd.Next(5, 15 + 1));
+        SHp.sHp.GiveDamage(damage = rnd.Next(5, 7 + 1));
+        HP.hP.TakeHeal(heal = rnd.Next(2, 12 + 1));
+        turnPlayer = !turnPlayer;
+    }
+}

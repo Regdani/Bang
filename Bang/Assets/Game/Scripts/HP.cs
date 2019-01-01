@@ -15,7 +15,7 @@ public class HP : MonoBehaviour {
     public float a;
     public float moreArmor;
 
-
+    
     void Start()
     {
         CurrentHp = TotalHp;
@@ -28,22 +28,16 @@ public class HP : MonoBehaviour {
 
     void Update ()
     {
-        //if (Draggable.take == false)
-        //{
-        //    Draggable.take = true;
-
+        
             HealthBar();
             hp.text = CurrentHp.ToString();
-            
             Armor(a);
-       // }
-
     }
 
      void Awake()
-    {
+     {
         hP = this;
-    }
+     }
 
 
     public void TakeHeal(float heal)
@@ -93,7 +87,6 @@ public class HP : MonoBehaviour {
             }
             CurrentHp -= damage;
             HealthBar();
-
 
         }
 
