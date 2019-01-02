@@ -18,6 +18,9 @@ public class Draw : MonoBehaviour {
     private GameObject card;
     public Transform hand;
     
+    
+
+
 
     System.Random rnd = new System.Random();
 
@@ -30,11 +33,12 @@ public class Draw : MonoBehaviour {
     }
 
 
-   public void huzas () {
+   public  void huzas () {
         int veletlen = rnd.Next(1, 12 + 1);
         if (veletlen == 1)
         {
             card = Instantiate(bang);
+            
         }
 
         if (veletlen == 2)
@@ -85,6 +89,10 @@ public class Draw : MonoBehaviour {
 
         card.SetActive(true);
         card.transform.SetParent(hand);
+      
     }
+
+    
+   
 }
 
