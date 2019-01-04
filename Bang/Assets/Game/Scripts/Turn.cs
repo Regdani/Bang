@@ -9,7 +9,7 @@ public class Turn : MonoBehaviour {
     public float damage;
     public float heal;
     public bool huzhat;
-    public  int lapok=0;
+    public  int lapok=1;
     public int kijatszottLapok;
     public GameObject hand;
     
@@ -42,11 +42,14 @@ public class Turn : MonoBehaviour {
                 if (huzhat == true)
                 {
 
-                    while (lapok != 4)
+                    while (hand.transform.childCount!=4)
                     {
                         Draw.draw.huzas();
-                        lapok++;
                     }
+                    
+                       
+                   
+                    
 
                     huzhat = false;
                 }
@@ -83,9 +86,9 @@ public class Turn : MonoBehaviour {
 
     public void Enemy()
     {
-        HP.hP.Armor(armor = rnd.Next(5, 15 + 1));
-        SHp.sHp.GiveDamage(damage = rnd.Next(5, 7 + 1));
-        HP.hP.TakeHeal(heal = rnd.Next(2, 12 + 1));
+        HP.hP.Armor(armor = rnd.Next(5, 10 ));
+        SHp.sHp.GiveDamage(damage = rnd.Next(9, 20));
+        HP.hP.TakeHeal(heal = rnd.Next(5, 15));
         turnPlayer = !turnPlayer;
     }
 }

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: tequila
   m_EditorClassIdentifier: 
   damage: 0
-  heal: 7
+  heal: 6
   armor: 0

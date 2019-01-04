@@ -13,4 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   heal: 0
-  armor: 15
+  armor: 10

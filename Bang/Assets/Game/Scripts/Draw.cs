@@ -19,7 +19,7 @@ public class Draw : MonoBehaviour {
     public Transform hand;
     
     
-
+    
 
 
     System.Random rnd = new System.Random();
@@ -34,55 +34,55 @@ public class Draw : MonoBehaviour {
 
 
    public  void huzas () {
-        int veletlen = rnd.Next(1, 12 + 1);
-        if (veletlen == 1)
+        int veletlen = rnd.Next(0, 15 + 1);
+        if (veletlen <= 2 && veletlen > 0)
         {
             card = Instantiate(bang);
             
         }
 
-        if (veletlen == 2)
+        if (veletlen <= 4&&veletlen>2)
         {
             card = Instantiate(kinfe);
         }
 
-        if (veletlen == 3)
+        if (veletlen <= 6 && veletlen > 4)
         {
             card = Instantiate(punch);
         }
-        if (veletlen == 4)
+        if (veletlen ==20)
         {
             card = Instantiate(springfield);
         }
-        if (veletlen == 5)
+        if (veletlen <= 8 && veletlen > 6)
         {
             card = Instantiate(beer);
         }
-        if (veletlen == 6)
+        if (veletlen <= 10 && veletlen > 8)
         {
             card = Instantiate(flask);
         }
-        if (veletlen == 7)
+        if (veletlen <= 12 && veletlen > 10)
         {
             card = Instantiate(tequila);
         }
-        if (veletlen == 8)
+        if (veletlen ==19)
         {
             card = Instantiate(whisky);
         }
-        if (veletlen == 9)
+        if (veletlen <= 14 && veletlen > 12)
         {
             card = Instantiate(bible);
         }
-        if (veletlen == 10)
+        if (veletlen <= 16 && veletlen > 14)
         {
             card = Instantiate(cowboyhat);
         }
-        if (veletlen == 11)
+        if (veletlen <= 18 && veletlen > 16)
         {
             card = Instantiate(ironplate);
         }
-        if (veletlen == 12)
+        if (veletlen == 21)
         {
             card = Instantiate(sombrero);
         }

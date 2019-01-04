@@ -55,7 +55,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         SHp.sHp.Armor(card.armor);
         HP.hP.GiveDamage(card.damage);
         SHp.sHp.TakeHeal(card.heal);
-        Turn.turn.lapok--;
+        
         
         Destroy(gameObject);
         

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: whisky
   m_EditorClassIdentifier: 
   damage: 0
-  heal: 12
+  heal: 10
   armor: 0
