@@ -50,44 +50,44 @@ public class Draw : MonoBehaviour {
         {
             card = Instantiate(punch);
         }
-        if (veletlen ==20)
+        if (veletlen <= 8 && veletlen > 6)
         {
             card = Instantiate(springfield);
         }
-        if (veletlen <= 8 && veletlen > 6)
+        if (veletlen==9)
         {
             card = Instantiate(beer);
         }
-        if (veletlen <= 10 && veletlen > 8)
+        if (veletlen ==10)
         {
             card = Instantiate(flask);
         }
-        if (veletlen <= 12 && veletlen > 10)
+        if (veletlen ==11)
         {
             card = Instantiate(tequila);
         }
-        if (veletlen ==19)
+        if (veletlen ==12)
         {
             card = Instantiate(whisky);
         }
-        if (veletlen <= 14 && veletlen > 12)
+        if (veletlen==13)
         {
             card = Instantiate(bible);
         }
-        if (veletlen <= 16 && veletlen > 14)
+        if (veletlen==14)
         {
             card = Instantiate(cowboyhat);
         }
-        if (veletlen <= 18 && veletlen > 16)
+        if (veletlen==15)
         {
             card = Instantiate(ironplate);
         }
-        if (veletlen == 21)
+        if (veletlen == 16)
         {
             card = Instantiate(sombrero);
         }
 
-        card.SetActive(true);
+        
         card.transform.SetParent(hand);
       
     }

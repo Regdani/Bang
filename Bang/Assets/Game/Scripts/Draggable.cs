@@ -8,7 +8,9 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     
     public Transform parentToReturnTo = null;
     public CardsValue card;
+    
     public static Draggable draggable;
+    
     
 
    
@@ -45,7 +47,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             GetComponent<CanvasGroup>().blocksRaycasts = true;
             this.transform.SetParent(parentToReturnTo);
 
-        
+        dha();
        
     }
 
@@ -55,9 +57,9 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         SHp.sHp.Armor(card.armor);
         HP.hP.GiveDamage(card.damage);
         SHp.sHp.TakeHeal(card.heal);
-        
-        
+        gameObject.SetActive(false);
         Destroy(gameObject);
+        
         
     }
    

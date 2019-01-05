@@ -12,11 +12,12 @@ public class SHp : MonoBehaviour {
     public Text arm;
     private float a=0;
     private float moreArmor;
+    public GameObject lose;
 
 
     void Start()
     {
-        CurrentHp = TotalHp;
+        CurrentHp =TotalHp;
 
         hp.text = CurrentHp.ToString();
 
@@ -30,6 +31,7 @@ public class SHp : MonoBehaviour {
             hp.text = CurrentHp.ToString();
 
             Armor(a);
+        Lose();
     }
 
     void Awake()
@@ -105,5 +107,12 @@ public class SHp : MonoBehaviour {
         hp.text = CurrentHp.ToString();
         transform.localScale = new Vector3((CurrentHp / TotalHp), 1, 1);
 
+    }
+    public void Lose()
+    {
+        if (CurrentHp == 0)
+        {
+            lose.SetActive(true);
+        }
     }
 }

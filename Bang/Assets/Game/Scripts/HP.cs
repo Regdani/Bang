@@ -14,6 +14,7 @@ public class HP : MonoBehaviour {
     public Text arm;
     public float a;
     public float moreArmor;
+    public GameObject win;
 
     
     void Start()
@@ -32,6 +33,7 @@ public class HP : MonoBehaviour {
             HealthBar();
             hp.text = CurrentHp.ToString();
             Armor(a);
+        Win();
     }
 
      void Awake()
@@ -106,6 +108,14 @@ public class HP : MonoBehaviour {
         hp.text = CurrentHp.ToString();
         transform.localScale = new Vector3((CurrentHp / TotalHp), 1, 1);
         
+    }
+
+    public void Win()
+    {
+        if (CurrentHp==0)
+        {
+            win.SetActive(true);
+        }
     }
 }
 

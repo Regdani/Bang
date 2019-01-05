@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: flask
   m_EditorClassIdentifier: 
   damage: 0
-  heal: 2
+  heal: 4
   armor: 0

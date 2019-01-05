@@ -87,8 +87,8 @@ public class Turn : MonoBehaviour {
     public void Enemy()
     {
         HP.hP.Armor(armor = rnd.Next(5, 10 ));
-        SHp.sHp.GiveDamage(damage = rnd.Next(9, 20));
-        HP.hP.TakeHeal(heal = rnd.Next(5, 15));
+        SHp.sHp.GiveDamage(damage = rnd.Next(7, 15));
+        HP.hP.TakeHeal(heal = rnd.Next(5, 10));
         turnPlayer = !turnPlayer;
     }
 }
